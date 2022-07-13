@@ -86,13 +86,13 @@ jobs:
           fetch-depth: 0
       
       - name: Build Dockerfile
-      uses: redhat-actions/buildah-build@v2
-      id: build-image
-      with:
-        image: actions-demo
-        tags: latest ${{ github.sha }}
-        containerfiles: |
-          ./Dockerfile
+        uses: redhat-actions/buildah-build@v2
+        id: build-image
+        with:
+          image: actions-demo
+          tags: latest ${{ github.sha }}
+          containerfiles: |
+            ./Dockerfile
       
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
