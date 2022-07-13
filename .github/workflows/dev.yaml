@@ -68,7 +68,7 @@ jobs:
 
       - run: yarn test
         env:
-          MONGODB_URL: mongodb://mongodb:27017/node-boilerplate
+          MONGODB_URL: mongodb://localhost:27017/node-boilerplate
           JWT_SECRET: thisisasamplesecret
           JWT_ACCESS_EXPIRATION_MINUTES: 30
           JWT_REFRESH_EXPIRATION_DAYS: 30
@@ -105,7 +105,7 @@ jobs:
           password: ${{ github.token }}
           extra-args: |
             --disable-content-trust
-            
+
       - name: Echo outputs
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
